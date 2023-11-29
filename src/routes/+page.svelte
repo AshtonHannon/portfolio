@@ -1,26 +1,29 @@
-<script>
+<script lang="ts">
+	import BackToTopButton from '$lib/BackToTopButton.svelte';
+	import Contact from '$lib/Contact.svelte';
 	import Landing from '$lib/Landing.svelte';
+	import Projects from '$lib/Projects.svelte';
+	import Work from '$lib/Work.svelte';
+	import Education from './../lib/Education.svelte';
+
+	let innerHeight: number;
+	let scrollY: number;
 </script>
+
+<svelte:window bind:innerHeight bind:scrollY />
 
 <div id="landing" class="flex h-screen w-screen flex-col">
 	<div class="flex-1">
 		<Landing />
 	</div>
 </div>
-<div id="about" class="flex h-screen w-screen flex-col">
-	<div class="flex-1">
-		<h1>About</h1>
-	</div>
-</div>
-<div id="education" class="flex h-screen w-screen flex-col">
-	<div class="flex-1">Education</div>
-</div>
-<div id="work-experience" class="flex h-screen w-screen flex-col">
-	<div class="flex-1">Work Experience</div>
-</div>
-<div id="projects" class="flex h-screen w-screen flex-col">
-	<div class="flex-1">Projects</div>
-</div>
-<div id="contact" class="flex h-screen w-screen flex-col">
-	<div class="flex-1">Contact</div>
-</div>
+
+{#if scrollY > innerHeight / 3}
+	<BackToTopButton />
+{/if}
+
+<!-- <About/> -->
+<Education />
+<Work />
+<Projects />
+<Contact />

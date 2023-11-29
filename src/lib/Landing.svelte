@@ -8,7 +8,7 @@
 <div class="flex h-full w-full items-center justify-center">
 	<div class="flex h-full w-full flex-col items-center justify-center">
 		<div class="nav-buttons nav-underline flex animate-fade-right flex-col space-y-4 text-center animate-duration-1000">
-			<a href="#about">About</a>
+			<!-- <a href="#about">About</a> -->
 			<a href="#education">Education</a>
 			<a href="#work">Work</a>
 			<a href="#projects">Projects</a>
