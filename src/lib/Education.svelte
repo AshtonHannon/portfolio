@@ -15,7 +15,7 @@
 				toggleActions: 'play reset resume reverse',
 				trigger: '.education'
 			},
-			duration: 2,
+			duration: 1,
 			ease: 'power1.out',
 			opacity: 0,
 			y: -20
@@ -28,7 +28,7 @@
 				toggleActions: 'play reset resume reverse',
 				trigger: '.undergrad'
 			},
-			duration: 2,
+			duration: 1,
 			ease: 'power1.out',
 			opacity: 0,
 			y: -20
@@ -41,7 +41,7 @@
 				toggleActions: 'play reset resume reverse',
 				trigger: '.highschool'
 			},
-			duration: 2,
+			duration: 1,
 			ease: 'power1.out',
 			opacity: 0,
 			y: -20

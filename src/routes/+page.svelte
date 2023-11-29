@@ -13,9 +13,7 @@
 <svelte:window bind:innerHeight bind:scrollY />
 
 <div id="landing" class="flex h-screen w-screen flex-col">
-	<div class="flex-1">
 		<Landing />
-	</div>
 </div>
 
 {#if scrollY > innerHeight / 3}

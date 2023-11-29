@@ -5,9 +5,17 @@
 	import IconLinkedInSquare from '$lib/icons/IconLinkedInSquare.svelte';
 </script>
 
-<div class="flex h-full w-full items-center justify-center">
+<div class="flex flex-col h-full lg:w-full lg:flex-row lg:items-center lg:justify-center px-8">
+	<!-- Navigation Buttons -->
 	<div class="flex h-full w-full flex-col items-center justify-center">
-		<div class="nav-buttons nav-underline flex animate-fade-right flex-col space-y-4 text-center animate-duration-1000">
+		<!-- Small/Medium Picture -->
+		<div class="flex w-full justify-center lg:hidden pb-16 animate-duration-250 animate-fade-right">
+			<img class="rounded-full shadow-lg shadow-neutral-900 w-[150px] md:w-[200px]" src="picture.jpg" alt="" />
+		</div>
+
+		<div
+			class="nav-buttons nav-underline flex animate-fade-right flex-col space-y-4 text-center animate-delay-500 animate-duration-1000"
+		>
 			<!-- <a href="#about">About</a> -->
 			<a href="#education">Education</a>
 			<a href="#work">Work</a>
@@ -26,15 +34,15 @@
 			</a>
 		</div>
 	</div>
+
+	<!-- Large/Desktop Picture and Typewrite Text -->
 	<div
-		class="flex h-full w-full animate-fade-left flex-col items-center justify-center space-y-8 animate-duration-1000"
+		class="hidden h-full w-full animate-fade-left flex-col items-center justify-center space-y-8 animate-delay-500 animate-duration-1000 lg:flex"
 	>
 		<img class="w-[200px] rounded-full shadow-lg shadow-neutral-900" src="picture.jpg" alt="" />
 		<TypewriterText text="Hello, I'm Ashton!" />
 	</div>
 </div>
-
-<div class="bg-blue-500" />
 
 <style>
 	.icon {
