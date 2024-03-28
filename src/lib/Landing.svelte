@@ -1,4 +1,5 @@
 <script>
+import IconGithubSquare from "./icons/IconGithubSquare.svelte"
 	import IconInstagramSquare from '$lib/icons/IconInstagramSquare.svelte';
 	import IconFacebookSquare from '$lib/icons/IconFacebookSquare.svelte';
 	import TypewriterText from '$lib/TypewriterText.svelte';
@@ -26,11 +27,8 @@
 			<a class="icon" target="_blank" href="https://www.linkedin.com/in/ashton-hannon/">
 				<IconLinkedInSquare />
 			</a>
-			<a class="icon" target="_blank" href="#">
-				<IconFacebookSquare />
-			</a>
-			<a class="icon" target="_blank" href="#">
-				<IconInstagramSquare />
+			<a class="icon" target="_blank" href="https://github.com/AshtonHannon/">
+				<IconGithubSquare />
 			</a>
 		</div>
 	</div>
