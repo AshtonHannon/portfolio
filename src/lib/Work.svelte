@@ -54,19 +54,22 @@ import IconComputerScreen from './icons/IconComputerScreen.svelte';
 	<div class="flex h-full flex-col justify-center gap-32 p-8">
 		<div class="work-undergrad flex flex-col items-center">
 			<div class="h-[64px] lg:h-[96px] pb-2">
-				<IconComputerScreen />
+				<!-- <IconComputerScreen /> -->
+				<img class="w-[88px] h-[88px]" src="evCHARGEsolutions.png" alt=""/>
 			</div>
-			<p class="text-lg">Full Stack Developer</p>
-			<p class="text-sm italic">LCI-AE.COM</p>
-			<p class="text-sm italic">May 2022 - Present</p>
+			<p class="text-lg">Independent Contractor</p>
+			<p class="text-sm italic">Volusion Website Work</p>
+			<p class="text-sm italic">evCHARGEsolutions.com</p>
+			<p class="text-sm italic">May 2024 - Present</p>
 		</div>
 		<div class="work-highschool flex flex-col items-center">
 			<div class="h-[64px] lg:h-[96px] pb-2">
-				<IconButcherKnife />
+				<IconComputerScreen />
 			</div>
-			<p class="text-lg">Server / Cashier</p>
-			<p class="text-sm italic">Charlie the Butcher Kitchen</p>
-			<p class="text-sm italic">September 2018 - March 2020</p>
+			<p class="text-lg">Independent Contractor</p>
+			<p class="text-sm italic">Full Stack Development</p>
+			<p class="text-sm italic">LCI-AE.COM</p>
+			<p class="text-sm italic">May 2022 - April 2024</p>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import About from '$lib/About.svelte';
 	import BackToTopButton from '$lib/BackToTopButton.svelte';
 	import Contact from '$lib/Contact.svelte';
 	import Landing from '$lib/Landing.svelte';

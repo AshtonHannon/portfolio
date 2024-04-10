@@ -1,23 +1,24 @@
 <script>
-import IconGithubSquare from "./icons/IconGithubSquare.svelte"
+	import IconDownload from './icons/IconDownload.svelte';
+	import IconGithubSquare from './icons/IconGithubSquare.svelte';
 	import IconInstagramSquare from '$lib/icons/IconInstagramSquare.svelte';
 	import IconFacebookSquare from '$lib/icons/IconFacebookSquare.svelte';
 	import TypewriterText from '$lib/TypewriterText.svelte';
 	import IconLinkedInSquare from '$lib/icons/IconLinkedInSquare.svelte';
 </script>
 
-<div class="flex flex-col h-full lg:w-full lg:flex-row lg:items-center lg:justify-center px-8">
+<div class="flex h-full flex-col px-8 lg:w-full lg:flex-row lg:items-center lg:justify-center">
 	<!-- Navigation Buttons -->
 	<div class="flex h-full w-full flex-col items-center justify-center">
 		<!-- Small/Medium Picture -->
-		<div class="flex w-full justify-center lg:hidden pb-16 animate-duration-250 animate-fade-right">
-			<img class="rounded-full shadow-lg shadow-neutral-900 w-[150px] md:w-[200px]" src="picture.jpg" alt="" />
+		<div class="animate-duration-250 flex w-full animate-fade-right justify-center pb-16 lg:hidden">
+			<img class="w-[150px] rounded-full shadow-lg shadow-neutral-900 md:w-[200px]" src="picture.jpg" alt="" />
 		</div>
 
 		<div
-			class="nav-buttons nav-underline flex animate-fade-right flex-col space-y-4 text-center animate-delay-500 animate-duration-1000"
-		>
+			class="nav-buttons nav-underline flex animate-fade-right flex-col space-y-2 text-center animate-delay-500 animate-duration-1000">
 			<!-- <a href="#about">About</a> -->
+			<a href="/Ashton Hannon - Resume.pdf" download>Resume</a>
 			<a href="#education">Education</a>
 			<a href="#work">Work</a>
 			<a href="#projects">Projects</a>
@@ -35,8 +36,7 @@ import IconGithubSquare from "./icons/IconGithubSquare.svelte"
 
 	<!-- Large/Desktop Picture and Typewrite Text -->
 	<div
-		class="hidden h-full w-full animate-fade-left flex-col items-center justify-center space-y-8 animate-delay-500 animate-duration-1000 lg:flex"
-	>
+		class="hidden h-full w-full animate-fade-left flex-col items-center justify-center space-y-8 animate-delay-500 animate-duration-1000 lg:flex">
 		<img class="w-[200px] rounded-full shadow-lg shadow-neutral-900" src="picture.jpg" alt="" />
 		<TypewriterText text="Hello, I'm Ashton!" />
 	</div>
