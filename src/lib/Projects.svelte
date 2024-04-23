@@ -39,7 +39,7 @@
 			</div>
 			<div class="project-3 col-span-1 row-span-1 flex justify-center">
 				<ProjectCard
-					href="https://racingfanchaser88.pages.dev/"
+					href="https://racingfanchaser88.com/"
 					imgSrc="rfc88-logo.jpg"
 					title="Racingfanchaser88 Website"
 					desc="A website I made for a friend of mine in the racing scene" />
