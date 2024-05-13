@@ -55,12 +55,12 @@ import IconComputerScreen from './icons/IconComputerScreen.svelte';
 		<div class="work-undergrad flex flex-col items-center">
 			<div class="h-[64px] lg:h-[96px] pb-2">
 				<!-- <IconComputerScreen /> -->
-				<img class="w-[88px] h-[88px]" src="evCHARGEsolutions.png" alt=""/>
+				<img class="w-[64px] h-[64px]" src="evCHARGEsolutions.png" alt=""/>
 			</div>
 			<p class="text-lg">Independent Contractor</p>
 			<p class="text-sm italic">Volusion Website Work</p>
 			<p class="text-sm italic">evCHARGEsolutions.com</p>
-			<p class="text-sm italic">May 2024 - Present</p>
+			<p class="text-sm italic">March 2024 - Present</p>
 		</div>
 		<div class="work-highschool flex flex-col items-center">
 			<div class="h-[64px] lg:h-[96px] pb-2">
@@ -69,7 +69,7 @@ import IconComputerScreen from './icons/IconComputerScreen.svelte';
 			<p class="text-lg">Independent Contractor</p>
 			<p class="text-sm italic">Full Stack Development</p>
 			<p class="text-sm italic">LCI-AE.COM</p>
-			<p class="text-sm italic">May 2022 - April 2024</p>
+			<p class="text-sm italic">May 2022 - March 2024</p>
 		</div>
 	</div>
 </div>

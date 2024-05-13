@@ -1,10 +1,8 @@
 <script>
-	import IconDownload from './icons/IconDownload.svelte';
-	import IconGithubSquare from './icons/IconGithubSquare.svelte';
-	import IconInstagramSquare from '$lib/icons/IconInstagramSquare.svelte';
-	import IconFacebookSquare from '$lib/icons/IconFacebookSquare.svelte';
+	import IconBoxedGitHub from './icons/IconBoxedGitHub.svelte';
+	import IconBoxedLinkedIn from './icons/IconBoxedLinkedIn.svelte';
+	import IconBoxedPDFFile from './icons/IconBoxedPDFFile.svelte';
 	import TypewriterText from '$lib/TypewriterText.svelte';
-	import IconLinkedInSquare from '$lib/icons/IconLinkedInSquare.svelte';
 </script>
 
 <div class="flex h-full flex-col px-8 lg:w-full lg:flex-row lg:items-center lg:justify-center">
@@ -25,11 +23,14 @@
 			<a href="#contact">Contact</a>
 		</div>
 		<div class="animate-duration-250 flex animate-fade-right gap-4 pt-8 animate-delay-1000">
-			<a class="icon" target="_blank" href="https://www.linkedin.com/in/ashton-hannon/">
-				<IconLinkedInSquare />
+			<a title="LinkedIn" class="icon" target="_blank" href="https://www.linkedin.com/in/ashton-hannon/">
+				<IconBoxedLinkedIn />
 			</a>
-			<a class="icon" target="_blank" href="https://github.com/AshtonHannon/">
-				<IconGithubSquare />
+			<a title="GitHub" class="icon" target="_blank" href="https://github.com/AshtonHannon/">
+				<IconBoxedGitHub />
+			</a>
+			<a title="Resume" class="icon" download href="/Ashton Hannon - Resume.pdf">
+				<IconBoxedPDFFile />
 			</a>
 		</div>
 	</div>
@@ -44,7 +45,7 @@
 
 <style>
 	.icon {
-		width: 32px;
+		width: 36px;
 		fill: rgb(82 82 82);
 		transition: all 0.15s ease-in-out;
 	}
