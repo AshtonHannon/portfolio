@@ -2,7 +2,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { onMount } from 'svelte';
-import IconButcherKnife from "./icons/IconButcherKnife.svelte";
 import IconComputerScreen from './icons/IconComputerScreen.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +13,19 @@ import IconComputerScreen from './icons/IconComputerScreen.svelte';
 				start: 'top+=20 bottom',
 				toggleActions: 'play reset resume reverse',
 				trigger: '.work-education'
+			},
+			duration: 1.25,
+			ease: 'power1.out',
+			opacity: 0,
+			y: -20
+		});
+
+		/* Professional Info Animation */
+		gsap.from('.work-professional', {
+			scrollTrigger: {
+				start: 'top+=20 bottom',
+				toggleActions: 'play reset resume reverse',
+				trigger: '.work-professional'
 			},
 			duration: 1.25,
 			ease: 'power1.out',
@@ -52,9 +64,17 @@ import IconComputerScreen from './icons/IconComputerScreen.svelte';
 <div id="work" class="flex h-screen w-screen flex-col px-8 py-16">
 	<p class="work-education flex justify-center text-center text-4xl">Work</p>
 	<div class="flex h-full flex-col justify-center gap-32 p-8">
+		<div class="work-professional flex flex-col items-center">
+			<div class="h-[64px] lg:h-[96px] pb-2">
+				<img class="w-[224px] h-[64px]" src="ValmarHoldings_Logo_OnLight.png" alt=""/>
+			</div>
+			<p class="text-lg">Software Engineer</p>
+			<p class="text-sm italic">Full Stack Development</p>
+			<p class="text-sm italic">Valmar Holdings</p>
+			<p class="text-sm italic">June 2024 - Present</p>
+		</div>
 		<div class="work-undergrad flex flex-col items-center">
 			<div class="h-[64px] lg:h-[96px] pb-2">
-				<!-- <IconComputerScreen /> -->
 				<img class="w-[64px] h-[64px]" src="evCHARGEsolutions.png" alt=""/>
 			</div>
 			<p class="text-lg">Independent Contractor</p>

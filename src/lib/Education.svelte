@@ -32,19 +32,6 @@
 			opacity: 0,
 			y: -20
 		});
-
-		/* Highschool Info Animation */
-		gsap.from('.education-highschool', {
-			scrollTrigger: {
-				start: 'top+=20 bottom',
-				toggleActions: 'play reset resume reverse',
-				trigger: '.education-highschool'
-			},
-			duration: 1.25,
-			ease: 'power1.out',
-			opacity: 0,
-			y: -20
-		});
 	});
 </script>
 
@@ -58,14 +45,6 @@
 			<p class="text-lg">Computer Science B.S.</p>
 			<p class="text-sm italic">August 2020 - May 2024</p>
 			<p class="text-sm italic">GPA: 3.5</p>
-		</div>
-		<div class="education-highschool flex flex-col items-center">
-			<Link href="https://www.clevehill.org/o/chhs">
-				<img class="h-[64px] lg:h-[96px] pb-2" src="/clevehill-logo.png" alt="" />
-			</Link>
-			<p class="text-lg">High School Diploma</p>
-			<p class="text-sm italic">August 2016 - June 2020</p>
-			<p class="text-sm italic">GPA: 3.8</p>
 		</div>
 	</div>
 </div>
