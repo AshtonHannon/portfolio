@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ashton — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #fbfaf7;
+    --ink: #1a1a1a;
+    --ink-2: #555;
+    --ink-3: #8a8a85;
+    --line: #e8e6df;
+    --accent: #c2410c;       /* warm rust */
+    --serif: 'Newsreader', 'Times New Roman', Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{font-feature-settings:"ss01","cv11"}
+  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color 0.15s, color 0.15s}
+  a:hover{border-bottom-color:var(--accent);color:var(--accent)}
+  ::selection{background:var(--ink);color:var(--bg)}
+
+  .page{max-width:680px;margin:0 auto;padding:88px 32px 120px}
+
+  /* HEADER */
+  header{display:flex;align-items:flex-start;gap:24px;margin-bottom:64px}
+  .avatar{
+    width:64px;height:64px;border-radius:50%;flex-shrink:0;
+    background:#e8e6df url("https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=128&h=128&fit=crop&crop=face") center/cover;
+    /* fallback gradient if no img */
+    background-image: radial-gradient(circle at 35% 30%, #d4cfc0, #8a8a85);
+    border:1px solid var(--line);
+  }
+  .name{font-family:var(--serif);font-size:28px;font-weight:500;line-height:1.1;margin:0;letter-spacing:-0.01em}
+  .name em{font-style:italic;color:var(--accent);font-weight:400}
+  .tagline{color:var(--ink-2);margin-top:4px;font-size:15px}
+  .status{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:10px;letter-spacing:0.02em}
+  .status .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,0.15)}
+
+  /* INTRO */
+  .intro{margin-bottom:56px}
+  .intro p{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--ink);margin:0 0 14px;letter-spacing:-0.005em}
+  .intro p:last-child{margin-bottom:0;color:var(--ink-2);font-size:17px}
+  .intro em{font-style:italic;color:var(--accent)}
+
+  /* SECTION */
+  section{margin-bottom:56px}
+  h2{
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    color:var(--ink-3);text-transform:uppercase;letter-spacing:0.12em;
+    margin:0 0 20px;padding-bottom:10px;border-bottom:1px solid var(--line);
+    display:flex;align-items:baseline;justify-content:space-between;
+  }
+  h2 .count{color:var(--ink-3);font-weight:400}
+
+  /* ENTRY (work / projects shared) */
+  .entry{display:grid;grid-template-columns: 90px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .entry:last-child{border-bottom:none}
+  .entry .when{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:4px;letter-spacing:0.02em}
+  .entry .body .role{font-family:var(--serif);font-size:18px;font-weight:500;letter-spacing:-0.005em;margin:0 0 2px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .entry .body .role .at{color:var(--ink-3);font-weight:400;font-style:italic;font-size:16px}
+  .entry .body .desc{color:var(--ink-2);font-size:14.5px;margin:6px 0 0;line-height:1.55}
+  .entry .body .desc b{color:var(--ink);font-weight:500}
+  .entry .body .stack{margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:0.01em}
+
+  /* PROJECT (link arrow) */
+  .proj-row{display:grid;grid-template-columns: 90px 1fr auto;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;border-bottom-color:var(--line)}
+  .proj-row:hover{color:inherit;border-bottom-color:var(--line)}
+  .proj-row:hover .title{color:var(--accent)}
+  .proj-row:last-child{border-bottom:none}
+  .proj-row .when{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:0.02em}
+  .proj-row .title{font-family:var(--serif);font-size:18px;font-weight:500;letter-spacing:-0.005em;transition:color 0.15s}
+  .proj-row .desc{color:var(--ink-2);font-size:14px;margin-top:2px;line-height:1.5}
+  .proj-row .desc b{color:var(--ink);font-weight:500}
+  .proj-row .arrow{font-family:var(--mono);color:var(--ink-3);font-size:14px;align-self:center}
+  .proj-row:hover .arrow{color:var(--accent)}
+
+  /* SKILLS */
+  .skills{display:flex;flex-wrap:wrap;gap:6px}
+  .skill{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);padding:4px 8px;border:1px solid var(--line);border-radius:3px;background:#fff;letter-spacing:0.01em}
+  .skill.primary{border-color:var(--ink);color:var(--ink)}
+
+  /* CONTACT */
+  .contact-list{display:flex;flex-direction:column;gap:0}
+  .contact-list a{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;border-bottom:1px solid var(--line);border-bottom-color:var(--line);
+    font-size:15px;
+  }
+  .contact-list a:last-child{border-bottom:none}
+  .contact-list a:hover{border-bottom-color:var(--accent)}
+  .contact-list .k{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.1em;min-width:80px}
+  .contact-list .v{flex:1;margin-left:20px;color:var(--ink)}
+  .contact-list .arrow{font-family:var(--mono);color:var(--ink-3);font-size:13px}
+  .contact-list a:hover .arrow{color:var(--accent)}
+
+  /* FOOT */
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-3);display:flex;justify-content:space-between;letter-spacing:0.02em}
+  footer a{border-bottom:none;color:var(--ink-3)}
+  footer a:hover{color:var(--accent)}
+
+  @media (max-width:560px){
+    .page{padding:48px 24px 80px}
+    .entry, .proj-row{grid-template-columns: 1fr}
+    .entry .when, .proj-row .when{padding-top:0}
+    .proj-row .arrow{display:none}
+    header{flex-direction:column;gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="avatar" aria-label="Portrait of Ashton"></div>
+    <div>
+      <h1 class="name">Ashton</h1>
+      <div class="tagline">Software engineer · Williamsville, NY</div>
+      <div class="status"><span class="dot"></span> Available for select freelance &amp; FT roles</div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>I build <em>payment infrastructure</em> and full-stack platforms — the kind that quietly move millions every week.</p>
+    <p>Currently shipping server-less payment rails at Valmar Holdings on Go, React, C#, and AWS. Previously contracted full-stack apps for local-union and small-business clients across Western New York.</p>
+  </div>
+
+  <!-- WORK -->
+  <section>
+    <h2>Work <span class="count">— 3</span></h2>
+
+    <div class="entry">
+      <div class="when">2024 — now</div>
+      <div class="body">
+        <div class="role">Software Engineer <span class="at">Valmar Holdings</span></div>
+        <p class="desc">Lead development on an <b>AWS-native server-less payment processing</b> stack moving <b>millions weekly</b> across RTP, Push2Card, debit, and eCheck rails. Built a custom C# driver for DigitalCheck scanners, integrated OPN / Shazam / TSYS Sierra APIs, and led the company through both <b>SOC2 and PCI</b> compliance.</p>
+        <div class="stack">Go · React · C# · AWS Lambda · DynamoDB · S3 · RDS</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2024 — now</div>
+      <div class="body">
+        <div class="role">Independent Contractor <span class="at">evCHARGEsolutions</span></div>
+        <p class="desc">Ongoing <b>Volusion storefront</b> work — theming, template tweaks, product pipeline maintenance. Direct client liaison.</p>
+        <div class="stack">Volusion · HTML · CSS · JS</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2022 — 2024</div>
+      <div class="body">
+        <div class="role">Full-Stack Engineer <span class="at">LCI-AE.COM</span></div>
+        <p class="desc">Spearheaded a new <b>React + Django + MSSQL</b> application for local-union member management. Introduced Agile / SCRUM to the team's process and worked closely with clients to scope and deliver.</p>
+        <div class="stack">React · Django · Docker · MSSQL · Python</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects <span class="count">— 5</span></h2>
+
+    <a class="proj-row" href="#">
+      <div class="when">2024 — 26</div>
+      <div>
+        <div class="title">RCC eCheck Processing</div>
+        <div class="desc">Programmatic <b>X937</b> generation that collapsed an hours-long manual eCheck flow into an automated pipeline processing <b>thousands of checks daily</b>.</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="when">2022</div>
+      <div>
+        <div class="title">MLMap — Wi-Fi Localization</div>
+        <div class="desc">Led a team of 5 to ship an Android app that uses Wi-Fi fingerprinting to route users <b>room-to-room</b> through campus buildings, where GPS doesn't reach.</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="when">2023 — now</div>
+      <div>
+        <div class="title">Latte</div>
+        <div class="desc">A <b>Java web framework</b> akin to SpringBoot — annotation-driven routing, dependency injection, embedded server.</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="when">2024</div>
+      <div>
+        <div class="title">Racingfanchaser88</div>
+        <div class="desc">Marketing site for a racecar videographer covering dirt &amp; asphalt circuits — gallery-driven and hand-tuned.</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="when">2026</div>
+      <div>
+        <div class="title">Portfolio</div>
+        <div class="desc">This site. Built static, deployed cheap.</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="when">2020 — 24</div>
+      <div class="body">
+        <div class="role">B.S. Computer Science <span class="at">University at Buffalo</span></div>
+        <p class="desc">The State University of New York · GPA 3.5. Coursework in distributed systems, networks, mobile apps, databases, and machine learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Stack</h2>
+    <div class="skills">
+      <span class="skill primary">Go</span>
+      <span class="skill primary">TypeScript</span>
+      <span class="skill primary">React</span>
+      <span class="skill primary">AWS</span>
+      <span class="skill">C#</span>
+      <span class="skill">Python</span>
+      <span class="skill">Java</span>
+      <span class="skill">Rust</span>
+      <span class="skill">PHP</span>
+      <span class="skill">SQL</span>
+      <span class="skill">PostgreSQL</span>
+      <span class="skill">DynamoDB</span>
+      <span class="skill">MSSQL</span>
+      <span class="skill">Django</span>
+      <span class="skill">SvelteKit</span>
+      <span class="skill">TailwindCSS</span>
+      <span class="skill">Docker</span>
+      <span class="skill">NGINX</span>
+      <span class="skill">Lambda</span>
+      <span class="skill">S3</span>
+      <span class="skill">RDS</span>
+      <span class="skill">Aurora</span>
+      <span class="skill">EC2 / ECS</span>
+      <span class="skill">CloudFormation</span>
+      <span class="skill">Linux</span>
+      <span class="skill">Git</span>
+      <span class="skill">Azure</span>
+      <span class="skill">Agile / SCRUM</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Elsewhere</h2>
+    <div class="contact-list">
+      <a href="/cdn-cgi/l/email-protection#e088858c8c8fa0819388948f8ece848596"><span class="k">Email</span><span class="v"><span class="__cf_email__" data-cfemail="7f171a1313103f1e0c170b1011511b1a09">[email&#160;protected]</span></span><span class="arrow">→</span></a>
+      <a href="#"><span class="k">GitHub</span><span class="v">github.com/ashton</span><span class="arrow">↗</span></a>
+      <a href="#"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/ashton</span><span class="arrow">↗</span></a>
+      <a href="#"><span class="k">Resume</span><span class="v">ashton_resume.pdf</span><span class="arrow">↓</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ashton</span>
+    <span>Williamsville, NY</span>
+  </footer>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
