@@ -19,28 +19,34 @@
 	</header>
 
 	<div class="intro">
-		<p>I build <em>payment infrastructure</em> and full-stack platforms — the kind that quietly move millions every week.</p>
-		<p>Currently shipping server-less payment rails at Valmar Holdings on Go, React, C#, and AWS. Previously contracted full-stack apps for local-union and small-business clients across Western New York.</p>
+		<p>I build <em>payment infrastructure</em> and the full-stack platforms around it — systems that quietly move millions of dollars every week.</p>
+		<p>Today I&#39;m at Valmar Holdings, shipping serverless payment rails in Go, React, C#, and AWS. Before that, full-stack applications for local-union and small-business clients across Western New York.</p>
 	</div>
 
 	<section>
-		<h2>Work <span class="count">— 3</span></h2>
+		<h2>Work <span class="count">— 2</span></h2>
 
 		<div class="entry">
 			<div class="when">2024 — now</div>
 			<div class="body">
 				<div class="role">Software Engineer <span class="at">Valmar Holdings</span></div>
-				<p class="desc">Lead development on an <b>AWS-native server-less payment processing</b> stack moving <b>millions weekly</b> across RTP, Push2Card, debit, and eCheck rails. Built a custom C# driver for DigitalCheck scanners, integrated OPN / Shazam / TSYS Sierra APIs, and led the company through both <b>SOC2 and PCI</b> compliance.</p>
+				<p class="desc">Lead development of an <b>AWS-native serverless payment stack</b> that moves <b>millions of dollars a week</b> across RTP, ACH, Push2Card, debit card, and eCheck rails. Wrote a custom C# driver for DigitalCheck scanners, integrated the OPN and Shazam APIs, and carried the company through <b>SOC 2 and PCI</b> certification.</p>
 				<div class="stack">Go · React · C# · AWS Lambda · DynamoDB · S3 · RDS</div>
-			</div>
-		</div>
-
-		<div class="entry">
-			<div class="when">2024 — now</div>
-			<div class="body">
-				<div class="role">Independent Contractor <span class="at">evCHARGEsolutions</span></div>
-				<p class="desc">Ongoing <b>Volusion storefront</b> work — theming, template tweaks, product pipeline maintenance. Direct client liaison.</p>
-				<div class="stack">Volusion · HTML · CSS · JS</div>
+				<div class="sub">
+					<div class="sub-label">Projects</div>
+					<div class="sub-item">
+						<div class="sub-title">ACH Processing</div>
+						<div class="sub-desc">Built the <b>ACH</b> pipeline end to end — gathering transaction data, constructing the submission file, and reconciling each batch through balance checks that verify accurate transmission. Moves <b>millions of dollars a week</b>.</div>
+					</div>
+					<div class="sub-item">
+						<div class="sub-title">RCC eCheck Processing</div>
+						<div class="sub-desc">Programmatic <b>X937</b> file generation that turned an hours-long manual eCheck process into a pipeline clearing <b>thousands of checks a day</b>.</div>
+					</div>
+					<div class="sub-item">
+						<div class="sub-title">TSYS Sierra Debit Integration</div>
+						<div class="sub-desc">Designed and implemented the <b>TSYS Sierra</b> communication layer, bringing debit card processing onto the platform. Moves <b>hundreds of thousands of dollars a week</b>.</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -48,29 +54,20 @@
 			<div class="when">2022 — 2024</div>
 			<div class="body">
 				<div class="role">Full-Stack Engineer <span class="at">LCI-AE.COM</span></div>
-				<p class="desc">Spearheaded a new <b>React + Django + MSSQL</b> application for local-union member management. Introduced Agile / SCRUM to the team's process and worked closely with clients to scope and deliver.</p>
+				<p class="desc">Built a <b>React + Django + MSSQL</b> platform for local-union member management from the ground up. Introduced Agile and SCRUM to the team&#39;s workflow, and worked directly with clients to scope and ship each release.</p>
 				<div class="stack">React · Django · Docker · MSSQL · Python</div>
 			</div>
 		</div>
 	</section>
 
 	<section>
-		<h2>Projects <span class="count">— 5</span></h2>
-
-		<a class="proj-row" href="#">
-			<div class="when">2024 — 26</div>
-			<div>
-				<div class="title">RCC eCheck Processing</div>
-				<div class="desc">Programmatic <b>X937</b> generation that collapsed an hours-long manual eCheck flow into an automated pipeline processing <b>thousands of checks daily</b>.</div>
-			</div>
-			<span class="arrow">↗</span>
-		</a>
+		<h2>Projects <span class="count">— 3</span></h2>
 
 		<a class="proj-row" href="https://github.com/AshtonHannon/latte" target="_blank" rel="noopener">
 			<div class="when">2023 — now</div>
 			<div>
 				<div class="title">Latte</div>
-				<div class="desc">A <b>Java web framework</b> akin to SpringBoot — annotation-driven routing, dependency injection, embedded server.</div>
+				<div class="desc">A <b>Java web framework</b> in the spirit of Spring Boot — annotation-driven routing, dependency injection, and an embedded server.</div>
 			</div>
 			<span class="arrow">↗</span>
 		</a>
@@ -79,7 +76,7 @@
 			<div class="when">2024</div>
 			<div>
 				<div class="title">Portfolio</div>
-				<div class="desc">This site. Built static, deployed cheap.</div>
+				<div class="desc">This site. Static, hand-built, and cheap to host.</div>
 			</div>
 			<span class="arrow">↗</span>
 		</a>
@@ -88,16 +85,7 @@
 			<div class="when">2024</div>
 			<div>
 				<div class="title">Racingfanchaser88</div>
-				<div class="desc">Marketing site for a racecar videographer covering dirt &amp; asphalt circuits — gallery-driven and hand-tuned.</div>
-			</div>
-			<span class="arrow">↗</span>
-		</a>
-
-		<a class="proj-row" href="#">
-			<div class="when">2024</div>
-			<div>
-				<div class="title">MLMap — Wi-Fi Localization</div>
-				<div class="desc">Led a team of 5 to ship an Android app that uses Wi-Fi fingerprinting to route users <b>room-to-room</b> through campus buildings, where GPS doesn't reach.</div>
+				<div class="desc">Gallery-driven marketing site for a racing videographer who shoots dirt and asphalt circuits.</div>
 			</div>
 			<span class="arrow">↗</span>
 		</a>
@@ -109,13 +97,20 @@
 			<div class="when">2020 — 24</div>
 			<div class="body">
 				<div class="role">B.S. Computer Science <span class="at">University at Buffalo</span></div>
-				<p class="desc">The State University of New York · GPA 3.5. Coursework in distributed systems, networks, mobile apps, databases, and machine learning.</p>
+				<p class="desc">State University of New York · GPA 3.5. Coursework in distributed systems, networking, mobile development, databases, and machine learning.</p>
+				<div class="sub">
+					<div class="sub-label">Capstone</div>
+					<div class="sub-item">
+						<div class="sub-title">MLMap — Wi-Fi Localization</div>
+						<div class="sub-desc">Led a team of five to ship an Android app that uses Wi-Fi fingerprinting to guide people <b>room to room</b> inside campus buildings, where GPS drops out.</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section>
-		<h2>Languages</h2>
+		<h2>Stack</h2>
 		<div class="skills">
 			<span class="skill primary">Go</span>
 			<span class="skill primary">TypeScript / JavaScript</span>
@@ -149,7 +144,7 @@
 	</section>
 
 	<section>
-		<h2>Technologies</h2>
+		<h2>Tools &amp; Process</h2>
 		<div class="skills">
 			<span class="skill">Waterfall</span>
 			<span class="skill">Agile</span>
@@ -388,6 +383,39 @@
 		font-size: 11px;
 		color: var(--ink-3);
 		letter-spacing: 0.01em;
+	}
+
+	.entry .body .sub {
+		margin-top: 16px;
+		padding-left: 14px;
+		border-left: 1px solid var(--line);
+	}
+	.entry .body .sub-label {
+		font-family: var(--mono);
+		font-size: 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--ink-3);
+		margin-bottom: 6px;
+	}
+	.entry .body .sub-item + .sub-item {
+		margin-top: 12px;
+	}
+	.entry .body .sub-title {
+		font-family: var(--serif);
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: -0.005em;
+	}
+	.entry .body .sub-desc {
+		color: var(--ink-2);
+		font-size: 13.5px;
+		line-height: 1.5;
+		margin-top: 2px;
+	}
+	.entry .body .sub-desc :global(b) {
+		color: var(--ink);
+		font-weight: 500;
 	}
 
 	.proj-row {
