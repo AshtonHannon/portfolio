@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
+
 	const stats = [
 		{ value: '4 years', label: 'Shipping full-stack, cloud-native software' },
 		{ value: 'Fintech', label: 'Payments, banking and transaction systems' },
@@ -93,13 +95,13 @@
 			<a href="#education">Education</a>
 			<a href="#projects">Projects</a>
 			<a href="#skills">Skills</a>
-			<a class="nav-contact" href="mailto:ahannon228@gmail.com">Contact →</a>
+			<a class="nav-contact" href="mailto:ahannon228@gmail.com">Contact <span class="arrow">→</span></a>
 		</nav>
 	</header>
 
 	<section class="hero">
 		<div class="hero-copy">
-			<p class="eyebrow">Software Engineer · Applied AI · Fintech</p>
+			<p class="eyebrow">Software Engineer · Applied AI</p>
 			<h1>Production software that solves real business problems.</h1>
 			<p class="lede">
 				I'm Ashton, a Buffalo-based engineer with four years of experience building and shipping
@@ -128,7 +130,7 @@
 
 	<section class="stats">
 		{#each stats as stat}
-			<div class="stat">
+			<div class="stat" use:reveal>
 				<p class="stat-value">{stat.value}</p>
 				<p class="stat-label">{stat.label}</p>
 			</div>
@@ -136,10 +138,10 @@
 	</section>
 
 	<section id="experience" class="block block-first">
-		<h2>Experience</h2>
+		<h2 use:reveal>Experience</h2>
 		<div class="timeline">
 			{#each experience as job}
-				<article class:current={job.current}>
+				<article class:current={job.current} use:reveal>
 					<span class="dot"></span>
 					<p class="when">{job.when}</p>
 					{#if job.logo}
@@ -159,8 +161,9 @@
 	</section>
 
 	<section id="education" class="block">
-		<h2>Education</h2>
-		<div class="card edu">
+		<h2 use:reveal>Education</h2>
+		<div class="card edu" use:reveal>
+			<img class="logo logo-ub" src="/UB_Horizontal_SUNY.png" alt="University at Buffalo, The State University of New York" />
 			<div class="row">
 				<h3>University at Buffalo, SUNY</h3>
 				<span class="row-date">Aug 2020 — May 2024</span>
@@ -184,10 +187,10 @@
 	</section>
 
 	<section id="projects" class="block">
-		<h2>Selected projects</h2>
+		<h2 use:reveal>Selected projects</h2>
 		<div class="projects">
 			{#each projects as project}
-				<div class="card project">
+				<div class="card project" use:reveal>
 					<p class="project-meta">{project.meta}</p>
 					<h3>{project.title}</h3>
 					<p class="project-desc">{project.desc}</p>
@@ -199,9 +202,10 @@
 				href="https://github.com/AshtonHannon/latte"
 				target="_blank"
 				rel="noopener"
+				use:reveal
 			>
 				<span class="project-meta">Side project · 2023 — now</span>
-				<span class="project-title">Latte ↗</span>
+				<span class="project-title">Latte <span class="arrow">↗</span></span>
 				<span class="project-desc">
 					A Java web framework inspired by Spring Boot, with annotation-driven routing, dependency
 					injection and an embedded server.
@@ -212,10 +216,10 @@
 	</section>
 
 	<section id="skills" class="block block-last">
-		<h2>Skills</h2>
+		<h2 use:reveal>Skills</h2>
 		<div class="skills">
 			{#each skills as skill}
-				<div>
+				<div use:reveal>
 					<p class="skill-group">{skill.group}</p>
 					{skill.items}
 				</div>
@@ -241,10 +245,40 @@
 	a {
 		color: var(--ink);
 		text-decoration: none;
-		transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+		transition: color 0.15s, border-color 0.15s, background-color 0.15s,
+			transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
 	}
 	a:hover {
 		color: var(--accent);
+	}
+	.arrow {
+		display: inline-block;
+		transition: transform 0.25s var(--ease-out);
+	}
+
+	/* Load-in: header fades, hero copy and photo rise in a short stagger */
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+	@keyframes photo-in {
+		from {
+			opacity: 0;
+			transform: translate3d(0, 12px, 0) scale(0.97);
+		}
+	}
+	.site-header {
+		animation: fade-in 0.6s ease backwards;
+	}
+	.hero-copy > * {
+		animation: reveal-up 0.8s var(--ease-out) var(--d, 0s) backwards;
+	}
+	.hero-photo {
+		animation: photo-in 0.9s var(--ease-out) 0.18s backwards;
+	}
+	.stats {
+		animation: reveal-up 0.8s var(--ease-out) 0.4s backwards;
 	}
 
 	p,
@@ -277,14 +311,33 @@
 		font-weight: 500;
 	}
 	nav a {
+		position: relative;
 		color: var(--ink-2);
 	}
 	nav a:hover {
 		color: var(--accent);
 	}
+	nav a:not(.nav-contact)::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -4px;
+		height: 1.5px;
+		background: currentColor;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.3s var(--ease-out);
+	}
+	nav a:hover::after {
+		transform: scaleX(1);
+	}
 	nav .nav-contact {
 		color: var(--accent);
 		font-weight: 700;
+	}
+	.nav-contact:hover .arrow {
+		transform: translateX(3px);
 	}
 
 	/* Hero */
@@ -300,11 +353,13 @@
 		min-width: 0;
 	}
 	.eyebrow {
+		--d: 0.05s;
 		font-size: 15px;
 		font-weight: 600;
 		color: var(--accent);
 	}
 	h1 {
+		--d: 0.12s;
 		margin-top: 18px;
 		font-size: clamp(40px, 5.2vw, 64px);
 		line-height: 1.05;
@@ -312,6 +367,7 @@
 		font-weight: 800;
 	}
 	.lede {
+		--d: 0.2s;
 		margin-top: 24px;
 		max-width: 580px;
 		font-size: 18px;
@@ -319,6 +375,7 @@
 		color: var(--ink-2);
 	}
 	.actions {
+		--d: 0.28s;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 12px;
@@ -333,6 +390,9 @@
 		font-weight: 600;
 		font-size: 15px;
 	}
+	.btn:hover {
+		transform: translateY(-1px);
+	}
 	.btn-primary {
 		background: var(--ink);
 		color: #fff;
@@ -340,6 +400,7 @@
 	.btn-primary:hover {
 		background: var(--accent);
 		color: #fff;
+		box-shadow: 0 8px 20px -10px color-mix(in srgb, var(--accent) 60%, transparent);
 	}
 	.btn-secondary {
 		border: 1px solid var(--line-strong);
@@ -415,10 +476,32 @@
 		padding-bottom: 96px;
 	}
 	h2 {
+		position: relative;
 		flex: 1 1 240px;
+		align-self: flex-start;
 		font-size: 30px;
 		letter-spacing: -0.03em;
 		font-weight: 800;
+	}
+	/* Accent mark under the heading of the section a nav link jumped to */
+	h2::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -12px;
+		width: 28px;
+		height: 3px;
+		border-radius: 2px;
+		background: var(--accent);
+		opacity: 0;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.5s var(--ease-out), opacity 0.3s;
+	}
+	.block:target h2::after {
+		opacity: 1;
+		transform: scaleX(1);
+		transition-delay: 0.35s;
 	}
 	h3 {
 		font-size: 22px;
@@ -451,6 +534,31 @@
 	article.current .dot {
 		background: var(--accent);
 	}
+	@keyframes dot-pop {
+		from {
+			opacity: 0;
+			transform: scale(0.4);
+		}
+	}
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 35%, transparent);
+		}
+		70%,
+		100% {
+			box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 0%, transparent);
+		}
+	}
+	article:global(.is-revealed) > .dot {
+		animation: dot-pop 0.5s var(--ease-out) calc(var(--reveal-delay, 0ms) + 0.2s) backwards;
+	}
+	article.current > .dot {
+		animation: pulse 2.8s ease-out 1.2s infinite;
+	}
+	article.current:global(.is-revealed) > .dot {
+		animation: dot-pop 0.5s var(--ease-out) calc(var(--reveal-delay, 0ms) + 0.2s) backwards,
+			pulse 2.8s ease-out 1.2s infinite;
+	}
 	.when {
 		font-size: 14px;
 		font-weight: 600;
@@ -471,6 +579,10 @@
 	.logo-valmar {
 		height: 30px;
 		margin-top: 16px;
+	}
+	.logo-ub {
+		height: 32px;
+		margin-bottom: 16px;
 	}
 	article h3 {
 		margin-top: 8px;
@@ -591,9 +703,14 @@
 	.project-link:hover {
 		border-color: var(--accent);
 		color: var(--ink);
+		transform: translateY(-3px);
+		box-shadow: 0 14px 30px -18px rgb(24 24 27 / 0.28);
 	}
 	.project-link:hover .project-title {
 		color: var(--accent);
+	}
+	.project-link:hover .arrow {
+		transform: translate(2px, -2px);
 	}
 
 	/* Skills */
